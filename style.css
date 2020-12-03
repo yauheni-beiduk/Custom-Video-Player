@@ -1,6 +1,7 @@
 
 * {
     box-sizing: border-box;
+    overflow: hidden;
 }
 
 body {
@@ -78,5 +79,6 @@ body {
 } 
 
 .full-screen{
-    width: 95%;
+    width: 90%;
+    overflow: hidden;
 }
