@@ -7,8 +7,6 @@ const skipBtns = player.querySelectorAll('[data-skip]');
 const ranges = player.querySelectorAll('.player-input');
 const size = player.querySelector('.over-size');
 const controls = document.querySelector('.controls')
-// size.width = window.innerWidth;
-// size.height = window.innerHeight - progress.offsetHeight;
 function togglePlay() {
 const playPause = video.paused ? 'play' : 'pause';
 video[playPause]();
@@ -39,8 +37,7 @@ video.currentTime = scrubTime
 
 
 function fullScreen() {
-    document.getElementsByTagName('video')[0].requestFullscreen().addEventListener('click', togglePlay) ;
-    // player.classList.toggle('full-screen');
+    player.classList.toggle('full-screen');
 }
 
 
