@@ -41,6 +41,19 @@ function fullScreen() {
 }
 
 
+function progressTrue() {
+    mousedown = true;
+}
+
+function progressFalse() {
+    mousedown = false;
+}
+
+function remind(e) {
+    mousedown && scrub(e);
+}
+
+
 video.addEventListener('click', togglePlay);
 video.addEventListener('play', updateBtn);
 video.addEventListener('pause', updateBtn);
@@ -50,7 +63,7 @@ skipBtns.forEach(button => button.addEventListener('click',skip));
 ranges.forEach(range => range.addEventListener('mousemove', handleRangeUpdate))  
 let mousedown = false;
 progress.addEventListener('click', scrub);
-progress.addEventListener('mousemove', (e) => mousedown && scrub(e));
-progress.addEventListener('mousedown', () => mousedown = true);
-progress.addEventListener('mouseup', () => mousedown = false);
+progress.addEventListener('mousemove', remind);
+progress.addEventListener('mousedown',progressTrue);
+progress.addEventListener('mouseup', progressFalse);
 size.addEventListener('click', fullScreen);
